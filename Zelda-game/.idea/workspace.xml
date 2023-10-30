@@ -4,14 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88fce7e7-081e-4dcd-9117-e5ddf23ec656" name="Changes" comment="" />
+    <list default="true" id="88fce7e7-081e-4dcd-9117-e5ddf23ec656" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Mapas/1.1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Mapas/1.1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/src/iteso/objects/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/src/iteso/objects/Player.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
@@ -26,7 +29,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "master",
     "last_opened_file_path": "C:/Users/Iteso/Documents/3er semestre/Programacion Orientada Objetos/Poo/Projecto zelda/Zelda-game",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -48,6 +51,7 @@
       <updated>1698255799895</updated>
       <workItem from="1698255800822" duration="72000" />
       <workItem from="1698255926735" duration="1292000" />
+      <workItem from="1698337423095" duration="33000" />
     </task>
     <servers />
   </component>

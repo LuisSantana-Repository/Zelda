@@ -42,8 +42,8 @@ public class Player extends Move {
 	
 	
 	public void start() {
-		this.x=100;
-		this.y=100;
+		this.x=300;
+		this.y=300;
 		this.speed =4;
 		this.direction=4;
 	}
@@ -80,8 +80,8 @@ public class Player extends Move {
 	}
 	
 	public void draw(Graphics2D g2) {
-		g2.setColor(Color.white);
-		g2.fillRect(this.x, this.y, GamePanel.tileSize, GamePanel.tileSize);
+//		g2.setColor(Color.white);
+//		g2.fillRect(this.x, this.y, GamePanel.tileSize, GamePanel.tileSize);
 		BufferedImage temp = null;
 		switch(direction) {
 		case 1:

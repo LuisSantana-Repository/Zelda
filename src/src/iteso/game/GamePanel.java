@@ -1,6 +1,9 @@
 package src.iteso.game;
 import javax.swing.JPanel;
 import java.awt.*;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
 import src.iteso.objects.*;
 
 public class GamePanel extends JPanel implements Runnable{
@@ -17,6 +20,9 @@ public class GamePanel extends JPanel implements Runnable{
 	final public static int maxHeight= 224 * scale;
 	//
 	final private int FPS=24;
+	int x=0;
+	int y=0;
+	World mundo[][]= new World[1][1];
 	
 	
 	
@@ -27,7 +33,7 @@ public class GamePanel extends JPanel implements Runnable{
 	
 	
 	Player link = new Player(this,key);
-	Background test1 = new Background(Background.OVERWORLD);
+	Background background = new Background(Background.OVERWORLD);
 	
 	public GamePanel() {
 		this.setPreferredSize(new Dimension(maxColums, maxHeight));
@@ -40,6 +46,8 @@ public class GamePanel extends JPanel implements Runnable{
 	public void startGame() {
 		gameThread = new Thread(this); 
 		gameThread.start();
+		//BufferedReader reader = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("/1-1.txt")));
+		mundo[0][0]= new World(getClass().getResourceAsStream("/1-1.txt"));
 	}
 	
 	@Override
@@ -77,7 +85,7 @@ public class GamePanel extends JPanel implements Runnable{
 	
 	public void update() {
 		link.update();
-		test1.update();
+		background.update();
 	}
 	
 	
@@ -85,8 +93,12 @@ public class GamePanel extends JPanel implements Runnable{
 	public void paint(Graphics g) {//grafics 
 		super.paintComponent(g);
 		Graphics2D g2 = (Graphics2D)g;
-		test1.draw(g2);
+		background.drawback(g2);
+		
+		mundo[0][0].paint(g2);
 		link.draw(g2);
+		
+		background.drawforward(g2);
 		g2.dispose();
 	}
 }

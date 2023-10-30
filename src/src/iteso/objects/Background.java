@@ -24,9 +24,12 @@ public class Background extends Statick{
 	
 	public void update() {}
 	
-	public void draw(Graphics2D g2) {
+	public void drawback(Graphics2D g2) {
 		g2.setColor(imagen);
 		g2.fillRect(0, 0, GamePanel.maxColums, GamePanel.maxHeight);
+		
+	}
+	public void drawforward(Graphics2D g2) {
 		g2.setColor(Color.BLACK);
 		g2.fillRect(0, 0, GamePanel.maxColums, GamePanel.maxHeight-(GamePanel.tileSize*11));
 	}
