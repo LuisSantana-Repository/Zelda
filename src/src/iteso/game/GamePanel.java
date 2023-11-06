@@ -19,7 +19,7 @@ public class GamePanel extends JPanel implements Runnable{
 	final public static int maxColums =256 * scale; 
 	final public static int maxHeight= 224 * scale;
 	//
-	final private int FPS=24;
+	final private int FPS=60;
 	int x=0;
 	int y=0;
 	World mundo[][]= new World[1][1];
@@ -95,7 +95,7 @@ public class GamePanel extends JPanel implements Runnable{
 		Graphics2D g2 = (Graphics2D)g;
 		background.drawback(g2);
 		
-		mundo[0][0].paint(g2);
+		mundo[y][x].paint(g2);
 		link.draw(g2);
 		
 		background.drawforward(g2);
