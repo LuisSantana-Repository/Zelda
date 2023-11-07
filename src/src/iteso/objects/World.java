@@ -67,4 +67,15 @@ public class World {
 			}
 		}
 	}
+
+
+	public Boolean colided(int y, int x) {
+		if(map[y][x]!=0 && tiles[color-1][(map[y][x]) -1].colicion==true) {
+			return true;
+		}else {
+			return false;
+		}
+	}
 }
+
+

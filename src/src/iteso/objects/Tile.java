@@ -12,7 +12,7 @@ public class Tile extends Statick {
 	
 	
 	public Tile(int colicion, BufferedImage image) {
-		this.colicion=colicion;
+		this.colicion=true;
 		this.image= image;
 		
 	}

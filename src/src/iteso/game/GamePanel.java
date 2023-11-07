@@ -23,7 +23,7 @@ public class GamePanel extends JPanel implements Runnable{
 	int x=0;
 	int y=0;
 	World mundo[][]= new World[1][1];
-	
+	static World map;
 	
 	
 	Thread gameThread;
@@ -48,6 +48,7 @@ public class GamePanel extends JPanel implements Runnable{
 		gameThread.start();
 		//BufferedReader reader = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("/1-1.txt")));
 		mundo[0][0]= new World(getClass().getResourceAsStream("/1-1.txt"));
+		CollicionDetector test = new CollicionDetector();
 	}
 	
 	@Override
@@ -84,8 +85,10 @@ public class GamePanel extends JPanel implements Runnable{
 	
 	
 	public void update() {
+		map = mundo[y][x];
 		link.update();
 		background.update();
+		
 	}
 	
 	
@@ -100,5 +103,9 @@ public class GamePanel extends JPanel implements Runnable{
 		
 		background.drawforward(g2);
 		g2.dispose();
+	}
+	
+	static World Map() {
+		return map;
 	}
 }

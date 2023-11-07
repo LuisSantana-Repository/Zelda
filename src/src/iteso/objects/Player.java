@@ -10,7 +10,7 @@ import javax.imageio.ImageIO;
 public class Player extends Move {
 	GamePanel gp;
 	Keyboard kb;
-	Rectangle hitbox;
+	public Rectangle hitbox;
 	boolean attack;
 	boolean colicionOn = false;
 
@@ -50,22 +50,24 @@ public class Player extends Move {
 	
 	public void update() {
 		if(kb.isW()||kb.isA()||kb.isS()||kb.isD()) {
-			if(kb.isW()) {
+			if(kb.isW()) {//up 1
 				this.direction=1;
 				this.y -= this.speed;
 			}
-			else if(kb.isS()) {
+			else if(kb.isS()) {//down 2
 				this.direction=2;
 				this.y += this.speed;
 			}
-			else if(kb.isA()) {
+			else if(kb.isA()) {//left 3
 				this.direction=3;
 				this.x -= this.speed;
 			}
-			else if(kb.isD()) {
+			else if(kb.isD()) {//right 4 
 				this.direction=4;
 				this.x += this.speed;
 			}
+			
+			
 			fCounter++;
 			if(fCounter>10) {
 				if(iCounter==1) {
@@ -75,6 +77,29 @@ public class Player extends Move {
 				}
 				fCounter=0;
 			}
+			
+			
+			if(CollicionDetector.deteccionPared(this) == true) {
+				System.out.println("choque");
+				switch(direction) {
+				case 1:
+					this.y += this.speed;
+					break;
+					
+				case 2:
+					this.y -= this.speed;
+					break;
+					
+				case 3:
+					this.x += this.speed;
+					break;
+				case 4:
+					this.x -= this.speed;
+					break;
+				}
+				
+			}
+			
 		}
 		
 	}
@@ -116,7 +141,7 @@ public class Player extends Move {
 		}
 		g2.drawImage(temp, x,y,GamePanel.tileSize,GamePanel.tileSize,null); 
 		
-		//g2.setColor(Color.BLACK);
-		//g2.fillRect(this.x+hitbox.x, this.y+hitbox.y, hitbox.height, hitbox.width);
+		g2.setColor(Color.BLACK);
+		g2.fillRect(this.x+hitbox.x, this.y+hitbox.y, hitbox.height, hitbox.width);
 	}
 }
