@@ -11,8 +11,8 @@ public class CollicionDetector {
 		int rightXTile = (Link.x + Link.hitbox.x +Link.hitbox.width)/GamePanel.tileSize;
 		int upYTile = ((Link.y + Link.hitbox.y)/GamePanel.tileSize)-3;
 		int downYTile =((Link.y + Link.hitbox.y +Link.hitbox.height)/GamePanel.tileSize)-3;
-		System.out.println(leftXTile+" "+rightXTile);
-		System.out.println(upYTile+" "+downYTile);
+		//System.out.println(leftXTile+" "+rightXTile);
+		//System.out.println(upYTile+" "+downYTile);
 		
 		if(leftXTile<0)leftXTile=0;
 		if(rightXTile<0)rightXTile=0;

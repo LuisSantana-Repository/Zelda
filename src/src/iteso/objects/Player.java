@@ -8,20 +8,15 @@ import javax.imageio.ImageIO;
 
 
 public class Player extends Move {
-	GamePanel gp;
-	Keyboard kb;
-	public Rectangle hitbox;
+	
 	boolean attack;
 	boolean colicionOn = false;
 
 	
 	
-	private Player() {}
 	
 	
-	public Player(GamePanel gp, Keyboard kb) {
-		this.gp =gp;
-		this.kb=kb;
+	public Player() {
 		start();
 		hitbox = new Rectangle(8,16,32,32);
 		life = 3;
@@ -49,20 +44,21 @@ public class Player extends Move {
 	}
 	
 	public void update() {
-		if(kb.isW()||kb.isA()||kb.isS()||kb.isD()) {
-			if(kb.isW()) {//up 1
+		
+		if(Keyboard.isW()||Keyboard.isA()||Keyboard.isS()||Keyboard.isD()) {
+			if(Keyboard.isW()) {//up 1
 				this.direction=1;
 				this.y -= this.speed;
 			}
-			else if(kb.isS()) {//down 2
+			else if(Keyboard.isS()) {//down 2
 				this.direction=2;
 				this.y += this.speed;
 			}
-			else if(kb.isA()) {//left 3
+			else if(Keyboard.isA()) {//left 3
 				this.direction=3;
 				this.x -= this.speed;
 			}
-			else if(kb.isD()) {//right 4 
+			else if(Keyboard.isD()) {//right 4 
 				this.direction=4;
 				this.x += this.speed;
 			}
@@ -141,7 +137,7 @@ public class Player extends Move {
 		}
 		g2.drawImage(temp, x,y,GamePanel.tileSize,GamePanel.tileSize,null); 
 		
-		g2.setColor(Color.BLACK);
-		g2.fillRect(this.x+hitbox.x, this.y+hitbox.y, hitbox.height, hitbox.width);
+		//g2.setColor(Color.BLACK);
+		//g2.fillRect(this.x+hitbox.x, this.y+hitbox.y, hitbox.height, hitbox.width);
 	}
 }

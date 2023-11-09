@@ -9,8 +9,8 @@ import src.iteso.objects.*;
 public class GamePanel extends JPanel implements Runnable{
 	
 	
-	final public static int pixels =16;//16x16 size of link and objecs
-	final public static int scale = 3; //16 bits is very samll so we make ir bigger
+	final private static int pixels =16;//16x16 size of link and objecs
+	final private static int scale = 3; //16 bits is very samll so we make ir bigger
 	final public static int tileSize = pixels*scale;
 	
 	//nes original size is 256 * 224
@@ -20,20 +20,21 @@ public class GamePanel extends JPanel implements Runnable{
 	final public static int maxHeight= 224 * scale;
 	//
 	final private int FPS=60;
-	int x=0;
-	int y=0;
-	World mundo[][]= new World[1][1];
-	static World map;
+	private int x=0;
+	private int y=0;
+	private World mundo[][]= new World[1][1];
+	public static World map;
 	
 	
-	Thread gameThread;
-	Keyboard key = new Keyboard();
+	private Thread gameThread;
+	private Keyboard key = new Keyboard();
 	//un thread es unn hilo de ejecicion concurrentes dentro de un programa
 	//se necesita runable para trabajar con treads
 	
 	
-	Player link = new Player(this,key);
+	Player link = new Player();
 	Background background = new Background(Background.OVERWORLD);
+	Foreground foreground = new Foreground();
 	
 	public GamePanel() {
 		this.setPreferredSize(new Dimension(maxColums, maxHeight));
@@ -87,7 +88,6 @@ public class GamePanel extends JPanel implements Runnable{
 	public void update() {
 		map = mundo[y][x];
 		link.update();
-		background.update();
 		
 	}
 	
@@ -96,12 +96,12 @@ public class GamePanel extends JPanel implements Runnable{
 	public void paint(Graphics g) {//grafics 
 		super.paintComponent(g);
 		Graphics2D g2 = (Graphics2D)g;
-		background.drawback(g2);
+		background.paint(g2);
 		
 		mundo[y][x].paint(g2);
 		link.draw(g2);
 		
-		background.drawforward(g2);
+		foreground.paint(g2);
 		g2.dispose();
 	}
 	

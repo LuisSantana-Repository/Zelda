@@ -2,7 +2,7 @@ package src.iteso.game;
 import java.awt.event.*;
 
 public class Keyboard implements KeyListener{
-	private boolean W,A,S,D,Enter,Attack,Item;
+	private static boolean W=false,A=false,S=false,D=false,Enter=false,Attack=false,Item=false;
 	
 	@Override
 	public void keyTyped(KeyEvent e) {
@@ -59,7 +59,7 @@ public class Keyboard implements KeyListener{
 		
 	}
 
-	public boolean isW() {
+	public static boolean isW() {
 		return W;
 	}
 
@@ -67,7 +67,7 @@ public class Keyboard implements KeyListener{
 		W = w;
 	}
 
-	public boolean isA() {
+	public static boolean isA() {
 		return A;
 	}
 
@@ -75,7 +75,7 @@ public class Keyboard implements KeyListener{
 		A = a;
 	}
 
-	public boolean isS() {
+	public static boolean isS() {
 		return S;
 	}
 
@@ -83,7 +83,7 @@ public class Keyboard implements KeyListener{
 		S = s;
 	}
 
-	public boolean isD() {
+	public static boolean isD() {
 		return D;
 	}
 
@@ -91,7 +91,7 @@ public class Keyboard implements KeyListener{
 		D = d;
 	}
 
-	public boolean isEnter() {
+	public static boolean isEnter() {
 		return Enter;
 	}
 
@@ -99,7 +99,7 @@ public class Keyboard implements KeyListener{
 		Enter = enter;
 	}
 
-	public boolean isAttack() {
+	public static boolean isAttack() {
 		return Attack;
 	}
 
@@ -107,7 +107,7 @@ public class Keyboard implements KeyListener{
 		Attack = attack;
 	}
 
-	public boolean isItem() {
+	public static boolean isItem() {
 		return Item;
 	}
 
