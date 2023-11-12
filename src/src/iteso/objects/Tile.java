@@ -2,8 +2,6 @@ package src.iteso.objects;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
-import src.iteso.game.GamePanel;
-
 public class Tile extends Statick {
 	private Tile() {}
 	
@@ -28,8 +26,7 @@ public class Tile extends Statick {
 	@Override
 	protected void update() {
 		// TODO Auto-generated method stub
-		
-	}
+		}
 	
 
 }

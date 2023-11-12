@@ -14,7 +14,7 @@ public class Foreground extends Statick {
 	@Override
 	public void paint(Graphics2D g2) {
 		// TODO Auto-generated method stub
-		g2.setColor(Color.BLACK);
+		g2.setColor(imagen);
 		g2.fillRect(0, 0, GamePanel.maxColums, GamePanel.maxHeight-(GamePanel.tileSize*11));
 	}
 

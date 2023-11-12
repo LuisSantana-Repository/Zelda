@@ -42,7 +42,7 @@ public class Player extends Move {
 		this.speed =4;
 		this.direction=4;
 	}
-	
+
 	public void update() {
 		
 		if(Keyboard.isW()||Keyboard.isA()||Keyboard.isS()||Keyboard.isD()) {
@@ -137,7 +137,34 @@ public class Player extends Move {
 		}
 		g2.drawImage(temp, x,y,GamePanel.tileSize,GamePanel.tileSize,null); 
 		
-		//g2.setColor(Color.BLACK);
-		//g2.fillRect(this.x+hitbox.x, this.y+hitbox.y, hitbox.height, hitbox.width);
+		g2.setColor(Color.BLACK);
+		g2.fillRect(this.x+hitbox.x, this.y+hitbox.y, hitbox.height, hitbox.width);
+	}
+	
+	public int moveX(){
+		int leftXTile = (x + hitbox.x)/GamePanel.tileSize;
+		int rightXTile = (x + hitbox.x +hitbox.width)/GamePanel.tileSize;
+		if(leftXTile>15) {
+			x=x-GamePanel.maxColums;
+			return +1;
+			
+		}else if(rightXTile<0) {
+			x=x+GamePanel.maxColums+ GamePanel.tileSize;
+			return -1;
+		}
+		return 0;
+	}
+	public int moveY() {
+		int upYTile = ((y + hitbox.y)/GamePanel.tileSize)-3;
+		int downYTile =((y + hitbox.y + hitbox.height)/GamePanel.tileSize)-3;
+		if(upYTile>11) {
+			y=y-GamePanel.maxHeight + 2*GamePanel.tileSize;
+			return -1;
+			
+		}else if(downYTile<0) {
+			y=y+GamePanel.maxHeight- 3*GamePanel.tileSize;
+			return +1;
+		}
+		return 0;
 	}
 }

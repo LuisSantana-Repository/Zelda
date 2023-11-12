@@ -21,8 +21,8 @@ public class CollicionDetector {
 		
 		if(leftXTile>15)leftXTile=15;
 		if(rightXTile>15)rightXTile=15;
-		if(upYTile>11)upYTile=11;
-		if(downYTile>11)downYTile=11;
+		if(upYTile>10)upYTile=10;
+		if(downYTile>10)downYTile=10;
 		
 		
 		switch(Link.direction) {
