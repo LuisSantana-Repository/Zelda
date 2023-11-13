@@ -18,7 +18,7 @@ public class Player extends Move {
 	
 	public Player() {
 		start();
-		hitbox = new Rectangle(8,16,32,32);
+		hitbox = new Rectangle(12,24,24,24);
 		life = 3;
 		
 		try {

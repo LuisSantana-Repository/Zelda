@@ -97,7 +97,7 @@ public class GamePanel extends JPanel implements Runnable{
 		mundo[2][10]= new World(getClass().getResourceAsStream("/2-10.txt"));
 		mundo[2][11]= new World(getClass().getResourceAsStream("/2-11.txt"));
 		mundo[2][12]= new World(getClass().getResourceAsStream("/2-12.txt"));
-//		mundo[2][13]= new World(getClass().getResourceAsStream("/2-13.txt"));
+		mundo[2][13]= new World(getClass().getResourceAsStream("/2-13.txt"));
 		mundo[2][14]= new World(getClass().getResourceAsStream("/2-14.txt"));
 		mundo[2][15]= new World(getClass().getResourceAsStream("/2-15.txt"));
 	}
