@@ -1,11 +1,11 @@
-package src.iteso.objects;
+package src.iteso.game;
 
 import java.awt.Graphics2D;
 import java.io.*;
 
 import javax.imageio.ImageIO;
 
-import src.iteso.game.GamePanel;
+import src.iteso.objects.Tile;
 
 public class World {
 	private World() {}
@@ -59,7 +59,7 @@ public class World {
 		for(int fila=0; fila<11 ;fila++) {
 			for(int columna=0;columna<16;columna++) {
 				if(map[fila][columna] !=0) {
-					g2.drawImage(tiles[color-1][map[fila][columna]-1].image, 
+					g2.drawImage(tiles[color-1][map[fila][columna]-1].getImage(), 
 							columna*GamePanel.tileSize, fila*GamePanel.tileSize+(GamePanel.tileSize*3),
 							GamePanel.tileSize,GamePanel.tileSize,null); 
 				}
@@ -69,7 +69,7 @@ public class World {
 
 
 	public Boolean colided(int y, int x) {
-		if(map[y][x]!=0 && tiles[color-1][(map[y][x]) -1].colicion==true) {
+		if(map[y][x]!=0 && tiles[color-1][(map[y][x]) -1].getColicion()==true) {
 			return true;
 		}else {
 			return false;

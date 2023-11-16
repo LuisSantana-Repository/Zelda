@@ -25,7 +25,7 @@ public class GamePanel extends JPanel implements Runnable{
 	private int x=0;
 	private int y=0;
 	private World mundo[][]= new World[8][16];
-	public static World map;
+	private static World map;
 	
 	
 	private Thread gameThread;

@@ -2,7 +2,9 @@ package src.iteso.objects;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
-public class Tile extends Statick {
+public class Tile {
+	private BufferedImage image;
+	private Boolean colicion;
 	private Tile() {}
 	
 	
@@ -15,17 +17,14 @@ public class Tile extends Statick {
 
 
 
-	@Override
-	protected void paint(Graphics2D g2) {
-		// TODO Auto-generated method stub
-		
+	public BufferedImage getImage() {
+		return image;
 	}
 
 
 
-	@Override
-	protected void update() {
-		// TODO Auto-generated method stub
+	public Boolean getColicion() {
+		return colicion;
 		}
 	
 

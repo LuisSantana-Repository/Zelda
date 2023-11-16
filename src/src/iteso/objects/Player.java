@@ -9,8 +9,7 @@ import javax.imageio.ImageIO;
 
 public class Player extends Move {
 	
-	boolean attack;
-	boolean colicionOn = false;
+	//private boolean attack;
 
 	
 	
@@ -40,26 +39,26 @@ public class Player extends Move {
 		this.x=300;
 		this.y=300;
 		this.speed =4;
-		this.direction=4;
+		this.direction=direccion.RIGHT;
 	}
 
 	public void update() {
 		
 		if(Keyboard.isW()||Keyboard.isA()||Keyboard.isS()||Keyboard.isD()) {
 			if(Keyboard.isW()) {//up 1
-				this.direction=1;
+				this.direction=direccion.UP;
 				this.y -= this.speed;
 			}
 			else if(Keyboard.isS()) {//down 2
-				this.direction=2;
+				this.direction=direccion.DOWN;
 				this.y += this.speed;
 			}
 			else if(Keyboard.isA()) {//left 3
-				this.direction=3;
+				this.direction=direccion.LEFT;
 				this.x -= this.speed;
 			}
 			else if(Keyboard.isD()) {//right 4 
-				this.direction=4;
+				this.direction=direccion.RIGHT;
 				this.x += this.speed;
 			}
 			
@@ -78,18 +77,18 @@ public class Player extends Move {
 			if(CollicionDetector.deteccionPared(this) == true) {
 				System.out.println("choque");
 				switch(direction) {
-				case 1:
+				case UP:
 					this.y += this.speed;
 					break;
 					
-				case 2:
+				case DOWN:
 					this.y -= this.speed;
 					break;
 					
-				case 3:
+				case LEFT:
 					this.x += this.speed;
 					break;
-				case 4:
+				case RIGHT:
 					this.x -= this.speed;
 					break;
 				}
@@ -105,21 +104,21 @@ public class Player extends Move {
 //		g2.fillRect(this.x, this.y, GamePanel.tileSize, GamePanel.tileSize);
 		BufferedImage temp = null;
 		switch(direction) {
-		case 1:
+		case UP:
 			if(iCounter==1) {
 				temp= up1;
 			}else {
 				temp= up2;
 			}
 			break;
-		case 2:
+		case DOWN:
 			if(iCounter==1) {
 				temp= down1;
 			}else {
 				temp= down2;
 			}
 			break;
-		case 3:
+		case LEFT:
 			if(iCounter==1) {
 				temp=left1;
 			}else {
@@ -127,7 +126,7 @@ public class Player extends Move {
 			}
 			
 			break;
-		case 4:
+		case RIGHT:
 			if(iCounter==1) {
 				temp=right1;
 			}else {
@@ -137,8 +136,8 @@ public class Player extends Move {
 		}
 		g2.drawImage(temp, x,y,GamePanel.tileSize,GamePanel.tileSize,null); 
 		
-		g2.setColor(Color.BLACK);
-		g2.fillRect(this.x+hitbox.x, this.y+hitbox.y, hitbox.height, hitbox.width);
+		//g2.setColor(Color.BLACK);
+		//g2.fillRect(this.x+hitbox.x, this.y+hitbox.y, hitbox.height, hitbox.width);
 	}
 	
 	public int moveX(){
@@ -166,5 +165,30 @@ public class Player extends Move {
 			return +1;
 		}
 		return 0;
+	}
+
+
+	@Override
+	public int getX() {
+		return x;
+	}
+
+
+	@Override
+	public int getY() {
+		return y;
+	}
+
+
+	@Override
+	public direccion getDireccion() {
+		return this.direction;
+	}
+
+
+	@Override
+	public Rectangle getHitbox() {
+		// TODO Auto-generated method stub
+		return hitbox;
 	}
 }

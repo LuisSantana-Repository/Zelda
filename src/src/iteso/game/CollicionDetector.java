@@ -7,10 +7,10 @@ public class CollicionDetector {
 	}
 	
 	public static Boolean deteccionPared(Player Link) {
-		int leftXTile = (Link.x + Link.hitbox.x)/GamePanel.tileSize;
-		int rightXTile = (Link.x + Link.hitbox.x +Link.hitbox.width)/GamePanel.tileSize;
-		int upYTile = ((Link.y + Link.hitbox.y)/GamePanel.tileSize)-3;
-		int downYTile =((Link.y + Link.hitbox.y +Link.hitbox.height)/GamePanel.tileSize)-3;
+		int leftXTile = (Link.getX() + Link.getHitbox().x)/GamePanel.tileSize;
+		int rightXTile = (Link.getX() + Link.getHitbox().x +Link.getHitbox().width)/GamePanel.tileSize;
+		int upYTile = ((Link.getY() + Link.getHitbox().y)/GamePanel.tileSize)-3;
+		int downYTile =((Link.getY() + Link.getHitbox().y +Link.getHitbox().height)/GamePanel.tileSize)-3;
 		//System.out.println(leftXTile+" "+rightXTile);
 		//System.out.println(upYTile+" "+downYTile);
 		
@@ -25,22 +25,22 @@ public class CollicionDetector {
 		if(downYTile>10)downYTile=10;
 		
 		
-		switch(Link.direction) {
-		case 1:
+		switch(Link.getDireccion()) {
+		case UP:
 			if(GamePanel.Map().colided(upYTile, leftXTile)==true || GamePanel.Map().colided(upYTile, rightXTile)) {
 				return true;
 			}else
 				return false;
 			
 			
-		case 2:
+		case DOWN:
 			if(GamePanel.Map().colided(downYTile, leftXTile)==true || GamePanel.Map().colided(downYTile, rightXTile)) {
 				return true;
 			}else
 				return false;
 			
 			
-		case 3:
+		case LEFT:
 			if(GamePanel.Map().colided(downYTile, leftXTile)==true || GamePanel.Map().colided(upYTile, leftXTile)) {
 				return true;
 			}else
@@ -48,7 +48,7 @@ public class CollicionDetector {
 			
 			
 			
-		case 4:
+		case RIGHT:
 			if(GamePanel.Map().colided(downYTile, rightXTile)==true || GamePanel.Map().colided(upYTile, rightXTile)) {
 				return true;
 			}else
