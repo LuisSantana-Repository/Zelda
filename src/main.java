@@ -10,6 +10,14 @@ public class main {
 
 		
 		GamePanel gamepanel = new GamePanel();
+		gamepanel.startGame();
+		
+//		try {
+//			Thread.sleep(1000);
+//		} catch (InterruptedException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 		window.add(gamepanel);// porque es una calse hija te deja agregarla
 		
 		window.pack();//checa las configutracion y lo acomoda para que tnegna el alyout de los subcomponesntes de GamePanel
@@ -19,7 +27,7 @@ public class main {
 		window.setVisible(true);// se pueda ver
 		
 		
-		gamepanel.startGame();
+		
 	}
 
 }

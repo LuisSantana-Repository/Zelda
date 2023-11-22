@@ -21,7 +21,7 @@ public class World {
 			tiles[0][1]= new Tile(1, ImageIO.read(getClass().getResourceAsStream("/Tiles/Color1/agua verde.png")));
 			tiles[0][2]= new Tile(1, ImageIO.read(getClass().getResourceAsStream("/Tiles/Color1/Arbol verde.png")));
 			tiles[0][3]= new Tile(1, ImageIO.read(getClass().getResourceAsStream("/Tiles/Color1/caracol verde.png")));
-			System.out.println("epico me llame");
+			//System.out.println("epico me llame");
 		}catch(IOException e) {
 			System.out.println(e);
 		}
@@ -50,6 +50,7 @@ public class World {
 				x=0;
 			}
 			reader.close();
+			
 			
 		}catch(Exception e) {
 			System.out.println(e); 

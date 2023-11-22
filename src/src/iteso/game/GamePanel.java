@@ -49,7 +49,7 @@ public class GamePanel extends JPanel implements Runnable{
 	public void startGame() {
 		World maptemp = new World(getClass().getResourceAsStream("/0-0.txt"));
 		map=maptemp;
-		gameThread = new Thread(this); 
+		
 		
 		//BufferedReader reader = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("/1-1.txt")));
 		mundo[0][0]= new World(getClass().getResourceAsStream("/0-0.txt"));
@@ -103,6 +103,7 @@ public class GamePanel extends JPanel implements Runnable{
 		mundo[2][14]= new World(getClass().getResourceAsStream("/2-14.txt"));
 		mundo[2][15]= new World(getClass().getResourceAsStream("/2-15.txt"));
 		
+		gameThread = new Thread(this); 
 		gameThread.start();
 	}
 	
