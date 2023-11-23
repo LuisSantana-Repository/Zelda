@@ -5,10 +5,12 @@ import java.io.*;
 
 import javax.imageio.ImageIO;
 
+import src.iteso.objects.Moblin;
 import src.iteso.objects.Tile;
 
 public class World {
 	private World() {}
+	private Moblin enemy = new Moblin();
 	private static Tile tiles[][];
 	private int map[][] = new int[11][16];
 	private int color;
@@ -59,7 +61,9 @@ public class World {
 		
 	}
 	
-	
+	public void update() {
+		enemy.update();
+	}
 	public void paint(Graphics2D g2) {
 		for(int fila=0; fila<11 ;fila++) {
 			for(int columna=0;columna<16;columna++) {
@@ -67,11 +71,12 @@ public class World {
 					g2.drawImage(tiles[color-1][map[fila][columna]-1].getImage(), 
 							columna*GamePanel.tileSize, fila*GamePanel.tileSize+(GamePanel.tileSize*3),
 							GamePanel.tileSize,GamePanel.tileSize,null); 
+					enemy.draw(g2);
 				}
 			}
 		}
 	}
-
+	
 
 	public Boolean colided(int y, int x) {
 		if(map[y][x]!=0 && tiles[color-1][(map[y][x]) -1].getColicion()==true) {

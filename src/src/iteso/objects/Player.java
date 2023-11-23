@@ -75,7 +75,7 @@ public class Player extends Move {
 			
 			
 			if(CollicionDetector.deteccionPared(this) == true) {
-				System.out.println("choque");
+				//System.out.println("choque");
 				switch(direction) {
 				case UP:
 					this.y += this.speed;

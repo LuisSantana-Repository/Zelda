@@ -145,6 +145,7 @@ public class GamePanel extends JPanel implements Runnable{
 		x=x+link.moveX();
 		map = mundo[y][x];
 		link.update();
+		map.update();
 		
 		
 	}

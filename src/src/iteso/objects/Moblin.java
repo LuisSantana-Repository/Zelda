@@ -23,12 +23,12 @@ public class Moblin extends Move {
 		try {
 			down1=ImageIO.read(getClass().getResourceAsStream("/Moblin/moblin frente 1.png"));
 			down2=ImageIO.read(getClass().getResourceAsStream("/Moblin/moblin frente 2.png"));
-			up1=ImageIO.read(getClass().getResourceAsStream("/Moblin/moblin atras 1.png"));
-			up2=ImageIO.read(getClass().getResourceAsStream("/Moblin/moblin atras 2.png"));
+			up1=ImageIO.read(getClass().getResourceAsStream("/Moblin/moblin por atras 1.png"));
+			up2=ImageIO.read(getClass().getResourceAsStream("/Moblin/moblin por atras 2.png"));
 			left1=ImageIO.read(getClass().getResourceAsStream("/Moblin/moblin izquierda 1.png"));
 			left2=ImageIO.read(getClass().getResourceAsStream("/Moblin/moblin izquierda 2.png"));
 			right1=ImageIO.read(getClass().getResourceAsStream("/Moblin/moblin derecha 1.png"));
-			right2=ImageIO.read(getClass().getResourceAsStream("/Moblin/moblin derecha 1.png"));
+			right2=ImageIO.read(getClass().getResourceAsStream("/Moblin/moblin derecha 2.png"));
 		}catch(IOException e) {
 			System.out.println(e);
 		}
@@ -64,7 +64,7 @@ public class Moblin extends Move {
 			else if(mCounter<201) {
 				mCounter=0;
 			}
-			
+			mCounter++;
 			fCounter++;
 			if(fCounter>10) {
 				if(iCounter==1) {
@@ -77,7 +77,7 @@ public class Moblin extends Move {
 			
 			
 			if(CollicionDetector.deteccionPared(this) == true) {
-				System.out.println("choque");
+				//System.out.println("choque");
 				switch(direction) {
 				case UP:
 					this.y += this.speed;
@@ -142,44 +142,8 @@ public class Moblin extends Move {
 		//g2.fillRect(this.x+hitbox.x, this.y+hitbox.y, hitbox.height, hitbox.width);
 	}
 	
-	public int moveX(){
-		int leftXTile = (x + hitbox.x)/GamePanel.tileSize;
-		int rightXTile = (x + hitbox.x +hitbox.width)/GamePanel.tileSize;
-		if(leftXTile>15) {
-			x=x-GamePanel.maxColums;
-			return +1;
-			
-		}else if(rightXTile<0) {
-			x=x+GamePanel.maxColums+ GamePanel.tileSize;
-			return -1;
-		}
-		return 0;
-	}
-	public int moveY() {
-		int upYTile = ((y + hitbox.y)/GamePanel.tileSize)-3;
-		int downYTile =((y + hitbox.y + hitbox.height)/GamePanel.tileSize)-3;
-		if(upYTile>11) {
-			y=y-GamePanel.maxHeight + 2*GamePanel.tileSize;
-			return -1;
-			
-		}else if(downYTile<0) {
-			y=y+GamePanel.maxHeight- 3*GamePanel.tileSize;
-			return +1;
-		}
-		return 0;
-	}
+	
 
-
-	@Override
-	public int getX() {
-		return x;
-	}
-
-
-	@Override
-	public int getY() {
-		return y;
-	}
 
 
 	@Override
@@ -192,5 +156,19 @@ public class Moblin extends Move {
 	public Rectangle getHitbox() {
 		// TODO Auto-generated method stub
 		return hitbox;
+	}
+
+
+	@Override
+	public int getX() {
+		// TODO Auto-generated method stub
+		return x;
+	}
+
+
+	@Override
+	public int getY() {
+		// TODO Auto-generated method stub
+		return y;
 	}
 }
