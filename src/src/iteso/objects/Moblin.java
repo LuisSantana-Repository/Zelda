@@ -7,28 +7,28 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 
-public class Player extends Move {
+public class Moblin extends Move {
 	
 	//private boolean attack;
-
+	int mCounter=0;
 	
 	
 	
 	
-	public Player() {
+	public Moblin() {
 		start();
 		hitbox = new Rectangle(12,24,24,24);
 		life = 3;
 		
 		try {
-			down1=ImageIO.read(getClass().getResourceAsStream("/Link/FW/l0_sprite_1.png"));
-			down2=ImageIO.read(getClass().getResourceAsStream("/Link/FW/l0_sprite_2.png"));
-			up1=ImageIO.read(getClass().getResourceAsStream("/Link/BW/sprite_0.png"));
-			up2=ImageIO.read(getClass().getResourceAsStream("/Link/BW/sprite_1.png"));
-			left1=ImageIO.read(getClass().getResourceAsStream("/Link/SLW/sprite_0.png"));
-			left2=ImageIO.read(getClass().getResourceAsStream("/Link/SLW/sprite_1.png"));
-			right1=ImageIO.read(getClass().getResourceAsStream("/Link/SRW/sprite_0.png"));
-			right2=ImageIO.read(getClass().getResourceAsStream("/Link/SRW/sprite_1.png"));
+			down1=ImageIO.read(getClass().getResourceAsStream("/Moblin/moblin frente 1.png"));
+			down2=ImageIO.read(getClass().getResourceAsStream("/Moblin/moblin frente 2.png"));
+			up1=ImageIO.read(getClass().getResourceAsStream("/Moblin/moblin atras 1.png"));
+			up2=ImageIO.read(getClass().getResourceAsStream("/Moblin/moblin atras 2.png"));
+			left1=ImageIO.read(getClass().getResourceAsStream("/Moblin/moblin izquierda 1.png"));
+			left2=ImageIO.read(getClass().getResourceAsStream("/Moblin/moblin izquierda 2.png"));
+			right1=ImageIO.read(getClass().getResourceAsStream("/Moblin/moblin derecha 1.png"));
+			right2=ImageIO.read(getClass().getResourceAsStream("/Moblin/moblin derecha 1.png"));
 		}catch(IOException e) {
 			System.out.println(e);
 		}
@@ -44,24 +44,26 @@ public class Player extends Move {
 
 	public void update() {
 		
-		if(Keyboard.isW()||Keyboard.isA()||Keyboard.isS()||Keyboard.isD()) {
-			if(Keyboard.isW()) {//up 1
+
+			if(mCounter<50) {//up 1
 				this.direction=direccion.UP;
 				this.y -= this.speed;
 			}
-			else if(Keyboard.isS()) {//down 2
+			else if(mCounter<100) {//down 2
 				this.direction=direccion.DOWN;
 				this.y += this.speed;
 			}
-			else if(Keyboard.isA()) {//left 3
+			else if(mCounter<150) {//left 3
 				this.direction=direccion.LEFT;
 				this.x -= this.speed;
 			}
-			else if(Keyboard.isD()) {//right 4 
+			else if(mCounter<200) {//right 4 
 				this.direction=direccion.RIGHT;
 				this.x += this.speed;
 			}
-			
+			else if(mCounter<201) {
+				mCounter=0;
+			}
 			
 			fCounter++;
 			if(fCounter>10) {
@@ -95,33 +97,9 @@ public class Player extends Move {
 				
 			}
 			
-		}	
+		}
+		
 	
-
-	
-//	if(CollicionDetector.deteccionMoblin(this) == true) {
-//		System.out.println("choque");
-//		switch(direction) {
-//		case UP:
-//			this.y += this.speed;
-//			break;
-//			
-//		case DOWN:
-//			this.y -= this.speed;
-//			break;
-//			
-//		case LEFT:
-//			this.x += this.speed;
-//			break;
-//		case RIGHT:
-//			this.x -= this.speed;
-//			break;
-//		}
-//		
-//	}
-//	
-}	
-
 	
 	public void draw(Graphics2D g2) {
 //		g2.setColor(Color.white);
@@ -202,16 +180,8 @@ public class Player extends Move {
 	public int getY() {
 		return y;
 	}
-	
-	
-	public int getLife() {
-		return life;
-	}
 
-	public void setLife(int life) {
-		this.life=life;
-	}
-	
+
 	@Override
 	public direccion getDireccion() {
 		return this.direction;
