@@ -1,16 +1,16 @@
-https://docs.oracle.com/javase/8/docs/api/java/awt/Graphics2D.html
-https://www.spriters-resource.com/nes/legendofzelda/sheet/8366/
-https://docs.oracle.com/javase%2F7%2Fdocs%2Fapi%2F%2F/java/awt/Graphics.html
-https://docs.oracle.com/javase/8/docs/api/javax/swing/JPanel.html
-https://docs.oracle.com/javase%2F7%2Fdocs%2Fapi%2F%2F/java/lang/Thread.html
-https://docs.oracle.com/javase%2F7%2Fdocs%2Fapi%2F%2F/java/awt/Color.html
-https://docs.oracle.com/javase/8/docs/api/java/awt/image/BufferedImage.html
-https://www.spriters-resource.com/fullview/8375/
-https://www.spriters-resource.com/fullview/119176/
-https://docs.oracle.com/javase%2F8%2Fdocs%2Fapi%2F%2F/javax/imageio/ImageIO.html
-https://www.digitalocean.com/community/tutorials/string-char-array-java
-https://www.youtube.com/watch?v=PJLLDpaLjds
-https://dcodingames.com/como-usar-la-clase-bufferedreader/#:~:text=Esta%20clase%20lee%20texto%20desde,de%20caracteres%2C%20arreglos%20y%20l%C3%ADneas.
-https://www.youtube.com/watch?v=PJLLDpaLjds
-https://www.youtube.com/watch?v=oPzPpUcDiYY
-
+BufferedImage (Java Platform SE 8 ). (2023, 4 octubre). https://docs.oracle.com/javase/8/docs/api/java/awt/image/BufferedImage.html
+Color (Java Platform SE 7 ). (2020, 24 junio). https://docs.oracle.com/javase%2F7%2Fdocs%2Fapi%2F%2F/java/awt/Color.html
+Graphics (Java Platform SE 7 ). (2020, 24 junio). https://docs.oracle.com/javase%2F7%2Fdocs%2Fapi%2F%2F/java/awt/Graphics.html
+Graphics2D (Java Platform SE 8 ). (2023, 4 octubre). https://docs.oracle.com/javase/8/docs/api/java/awt/Graphics2D.html
+ImageIO (Java Platform SE 8 ). (2023, 4 octubre). https://docs.oracle.com/javase%2F8%2Fdocs%2Fapi%2F%2F/javax/imageio/ImageIO.html
+JPANEl (Java Platform SE 8 ). (2023, 4 octubre). https://docs.oracle.com/javase/8/docs/api/javax/swing/JPanel.html
+KeyListener (Java Platform SE 7 ). (2020, 24 junio). https://docs.oracle.com/javase%2F7%2Fdocs%2Fapi%2F%2F/java/awt/event/KeyListener.html
+Learn Code By Gaming. (2021a, febrero 4). How to make a video game in Java (2D basics) [Vídeo]. YouTube. https://www.youtube.com/watch?v=PJLLDpaLjds
+Learn Code By Gaming. (2021b, febrero 4). How to make a video game in Java (2D basics) [Vídeo]. YouTube. https://www.youtube.com/watch?v=PJLLDpaLjds
+NES - The Legend of Zelda - Link - The Spriters Resource. (s. f.). https://www.spriters-resource.com/nes/legendofzelda/sheet/8366/
+Nieva, G. (2020, 23 marzo). Cómo usar la clase BufferedReader para introducir datos desde teclado. dCodinGames. https://dcodingames.com/como-usar-la-clase-bufferedreader/#:~:text=Esta%20clase%20lee%20texto%20desde,de%20caracteres%2C%20arreglos%20y%20l%C3%ADneas.
+Pankaj. (2022, 3 agosto). String to char Array Java - Convert string to char. DigitalOcean. https://www.digitalocean.com/community/tutorials/string-char-array-java
+RyiSnow. (2021, 1 noviembre). Collision Detection - How to make a 2D game in Java #6 [Vídeo]. YouTube. https://www.youtube.com/watch?v=oPzPpUcDiYY
+The Spriters Resource - Full Sheet View - The Legend of Zelda - Overworld (First Quest). (s. f.). https://www.spriters-resource.com/fullview/119176/
+The Spriters Resource - Full Sheet View - The Legend of Zelda - Overworld Tileset. (s. f.). https://www.spriters-resource.com/fullview/8375/
+Thread (Java Platform SE 7 ). (2020, 24 junio). https://docs.oracle.com/javase%2F7%2Fdocs%2Fapi%2F%2F/java/lang/Thread.html
